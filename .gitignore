@@ -1,0 +1,43 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Librerie/asset Ableton estranei al codice (mai versionare: enormi, non pertinenti al progetto)
+/Factory/
+/VST_Wrapper_extracted/
+VST Wrapper*.zip
+
+# Materiale non pertinente finito per errore nella cartella di lavoro
+*.torrent
+
+# File audio/progetto di test estemporanei (sessioni Serum/Ableton, non parte del codice)
+*.wav
+*.aif
+*.aiff
+*.asd
+
+# Stato runtime del bridge JSONL: rigenerato ad ogni sessione, mai da versionare
+/bridge/*.jsonl
+/bridge/reply.*.json
+/bridge/voice.*.txt
+
+# Log applicativo
+livemind.log
+
+# Output di sessione: render, catture loopback, screenshot, scansioni del set
+/out/
+/bridge/audio/
+
+# Reference audio (gia' coperti da *.wav) e cache delle misure
+/references/**/.metrics_cache.json
+*.flac
+
+# Dati personali/di sessione: mai in repo
+livemind/state/
+.claude/settings.local.json
+.env
+# Video/reference di terzi (copyright)
+*.mp4
+*.mov
+tools/*.ffp

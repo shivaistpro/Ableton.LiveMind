@@ -1,0 +1,13 @@
+/* Sala di comando anni '80 — nero piatto, ambra, zero sfumature */
+QMainWindow, QWidget { background: #0c0a06; color: #e8b04b; font-family: "Consolas", "Cascadia Mono", monospace; font-size: 12px; }
+QTextEdit, QListWidget, QLineEdit { background: #120f08; color: #e8b04b; border: 1px solid #2e2410; border-radius: 0px; padding: 6px; }
+QLineEdit:focus { border: 1px solid #ffb400; }
+QPushButton { background: #171205; color: #e8b04b; border: 1px solid #33290f; padding: 6px 12px; border-radius: 0px; }
+QPushButton:hover { border: 1px solid #ffb400; color: #ffb400; }
+QPushButton:checked { background: #2e2410; color: #ffb400; border: 1px solid #ffb400; }
+QComboBox { background: #120f08; color: #e8b04b; border: 1px solid #2e2410; padding: 4px; }
+QLabel[role="status"] { color: #8a6d2f; }
+QLabel[role="status-ok"] { color: #b6e85a; }
+QLabel[role="status-off"] { color: #e85a3f; }
+QListWidget::item { padding: 3px; border-bottom: 1px solid #1b1608; }
+QSplitter::handle { background: #2e2410; }

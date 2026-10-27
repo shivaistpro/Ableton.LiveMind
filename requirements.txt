@@ -1,0 +1,32 @@
+python-osc>=1.8
+mcp>=1.2,<2  # il codice usa FastMCP (API 1.x); la 2.x l ha rinominato MCPServer
+anthropic>=0.40
+opencv-python>=4.9
+mediapipe>=0.10
+mido>=1.3
+python-rtmidi>=1.5
+numpy>=1.26
+pyloudnorm>=0.1
+sounddevice>=0.4
+pytest>=8.0
+faster-whisper>=1.0
+pynput>=1.7
+pyautogui>=0.9
+pygetwindow>=0.0.9
+prompt_toolkit>=3.0
+zstandard
+cbor2
+# Command Center (core API + client desktop)
+fastapi>=0.110
+uvicorn>=0.29
+requests>=2.31
+PySide6>=6.6
+pyttsx3>=2.90
+# tools/ (cattura stereo, misure, automazione UI, mastering offline)
+soundcard>=0.4
+soundfile>=0.12
+scipy>=1.11
+matplotlib>=3.8
+psutil>=5.9
+pycaw>=20230407
+pedalboard>=0.9

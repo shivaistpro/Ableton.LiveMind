@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes" ?>
+<OzoneMS PresetVer="4" PluginVer="110000" PluginBuild="2942" LastModified="1792688745">
+    <EQ Enabled="1">
+        <Param ElementID="Equalizer" ParamID="Band 1 Enable" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 1 Visible" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 1 Shape" Value="6.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 1 Frequency" Value="30.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 1 Q" Value="0.70000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Enable" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Visible" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Shape" Value="0.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Frequency" Value="63.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Gain" Value="-2.50000000" />
+        <Param ElementID="Equalizer" ParamID="Band 2 Q" Value="1.20000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Enable" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Visible" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Shape" Value="0.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Frequency" Value="200.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Gain" Value="-2.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 3 Q" Value="2.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Enable" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Visible" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Shape" Value="0.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Frequency" Value="3200.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Gain" Value="0.70000000" />
+        <Param ElementID="Equalizer" ParamID="Band 6 Q" Value="0.90000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Enable" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Visible" Value="1.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Shape" Value="2.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Frequency" Value="9000.00000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Gain" Value="0.80000000" />
+        <Param ElementID="Equalizer" ParamID="Band 7 Q" Value="0.70000000" />
+        <ExtraBytes ElementID="Equalizer" Data="" />
+    </EQ>
+    <Imager Enabled="1">
+        <Param ElementID="Stereo Imager" ParamID="Num Bands" Value="4.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 1 Active" Value="1.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 2 Active" Value="1.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 3 Active" Value="1.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Crossover Cutoff 1" Value="150.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Crossover Cutoff 2" Value="2500.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Crossover Cutoff 3" Value="9000.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 1 Width Percent" Value="0.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 2 Width Percent" Value="0.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 3 Width Percent" Value="12.00000000" />
+        <Param ElementID="Stereo Imager" ParamID="Band 4 Width Percent" Value="20.00000000" />
+        <ExtraBytes ElementID="Stereo Imager" Data="" />
+    </Imager>
+    <Maximizer Enabled="1">
+        <Param ElementID="Maximizer" ParamID="Mode" Value="3.00000000" />
+        <Param ElementID="Maximizer" ParamID="Spectral Shaping Style" Value="2.00000000" />
+        <Param ElementID="Maximizer" ParamID="Character" Value="2.00000000" />
+        <Param ElementID="Maximizer" ParamID="Gain" Value="14.00000000" />
+        <Param ElementID="Maximizer" ParamID="Margin" Value="0.00000000" />
+        <Param ElementID="Maximizer" ParamID="Prevent Intersample Clipping" Value="1.00000000" />
+        <Param ElementID="Maximizer" ParamID="EnableSoftClipping" Value="1.00000000" />
+        <Param ElementID="Maximizer" ParamID="SoftClipMix" Value="60.00000000" />
+        <Param ElementID="Maximizer" ParamID="SoftClipMode" Value="1.00000000" />
+        <Param ElementID="Maximizer" ParamID="Enable Transient Shaping" Value="1.00000000" />
+        <Param ElementID="Maximizer" ParamID="Transient Shaping" Value="20.00000000" />
+        <Param ElementID="Maximizer" ParamID="Stereo Link Amounts Linked" Value="0.00000000" />
+        <Param ElementID="Maximizer" ParamID="Stereo Link" Value="40.00000000" />
+        <Param ElementID="Maximizer" ParamID="Stereo Transient Link Amount" Value="40.00000000" />
+        <ExtraBytes ElementID="Maximizer" Data="" />
+    </Maximizer>
+    <Global Enabled="1">
+        <ExtraBytes ElementID="ElementChain" Data="AAkAAABFcXVhbGl6ZXIADQAAAFN0ZXJlbyBJbWFnZXIACQAAAE1heGltaXplcg==" />
+        <ExtraBytes ElementID="Global" Data="" />
+    </Global>
+    <Meters Enabled="1" />
+</OzoneMS>

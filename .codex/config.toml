@@ -1,0 +1,16 @@
+# OpenAI Codex CLI: server MCP di progetto (attivi solo se il progetto e' "trusted").
+# In alternativa copia questi blocchi in ~/.codex/config.toml e imposta cwd
+# al percorso dove hai clonato la repo.
+
+[mcp_servers.livemind-lom]
+command = "python"
+args = ["-m", "livemind.mcp_server_lom"]
+
+[mcp_servers.livemind-ableton]
+command = "python"
+args = ["-m", "livemind.mcp_server"]
+
+# Shell locale senza conferme: abilitala solo se ti serve.
+# [mcp_servers.livemind-exec]
+# command = "python"
+# args = ["-m", "livemind.local_exec_mcp"]

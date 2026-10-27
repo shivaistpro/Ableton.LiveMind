@@ -1,0 +1,13 @@
+/* Command room — nero piatto, accento ciano, zero sfumature */
+QMainWindow, QWidget { background: #0b0d0f; color: #d7dde3; font-family: "Consolas", "Cascadia Mono", monospace; font-size: 12px; }
+QTextEdit, QListWidget, QLineEdit { background: #111417; color: #d7dde3; border: 1px solid #23282e; border-radius: 0px; padding: 6px; }
+QLineEdit:focus { border: 1px solid #35d0e0; }
+QPushButton { background: #171b1f; color: #d7dde3; border: 1px solid #2a3138; padding: 6px 12px; border-radius: 0px; }
+QPushButton:hover { border: 1px solid #35d0e0; color: #35d0e0; }
+QPushButton:checked { background: #123138; color: #35d0e0; border: 1px solid #35d0e0; }
+QComboBox { background: #111417; color: #d7dde3; border: 1px solid #23282e; padding: 4px; }
+QLabel[role="status"] { color: #7a8590; }
+QLabel[role="status-ok"] { color: #3ddc84; }
+QLabel[role="status-off"] { color: #e2554a; }
+QListWidget::item { padding: 3px; border-bottom: 1px solid #181c20; }
+QSplitter::handle { background: #23282e; }

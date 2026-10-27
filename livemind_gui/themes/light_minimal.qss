@@ -1,0 +1,13 @@
+/* Minimal chiaro — bianco piatto, accento blu, zero sfumature */
+QMainWindow, QWidget { background: #fafafa; color: #202225; font-family: "Consolas", "Cascadia Mono", monospace; font-size: 12px; }
+QTextEdit, QListWidget, QLineEdit { background: #ffffff; color: #202225; border: 1px solid #d8dadd; border-radius: 0px; padding: 6px; }
+QLineEdit:focus { border: 1px solid #2568e8; }
+QPushButton { background: #f0f1f3; color: #202225; border: 1px solid #d0d2d5; padding: 6px 12px; border-radius: 0px; }
+QPushButton:hover { border: 1px solid #2568e8; color: #2568e8; }
+QPushButton:checked { background: #e6edfd; color: #2568e8; border: 1px solid #2568e8; }
+QComboBox { background: #ffffff; color: #202225; border: 1px solid #d8dadd; padding: 4px; }
+QLabel[role="status"] { color: #6b6f75; }
+QLabel[role="status-ok"] { color: #1a8f4c; }
+QLabel[role="status-off"] { color: #c8362a; }
+QListWidget::item { padding: 3px; border-bottom: 1px solid #eceded; }
+QSplitter::handle { background: #d8dadd; }

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "livemind-lom": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "livemind.mcp_server_lom"],
+      "env": {}
+    },
+    "livemind-ableton": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "livemind.mcp_server"],
+      "env": {}
+    }
+  }
+}
