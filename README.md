@@ -313,3 +313,8 @@ Canale AbletonOSC: `brain/tools.py` e `mcp_server.py` testati con un `FakeLive` 
 - Convenience tool ad alto livello sul canale LiveMind per le operazioni rack/automation più comuni (oggi coperte solo dal path generico).
 - Groove/pattern helpers lato client (quantize/humanize note, generatori di bassline/drum pattern) — logica Python pura sopra `clip_notes_bulk`/`lom_notes`.
 - Loopback audio configurato stabilmente per `analyze_audio` in produzione.
+
+## Licenza
+
+Uso consentito, modifiche e ridistribuzione no: vedi [`LICENSE`](LICENSE).
+La repo non accetta contributi esterni (issue e pull request disattivate).
