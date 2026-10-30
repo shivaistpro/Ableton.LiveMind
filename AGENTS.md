@@ -153,7 +153,9 @@ una copia (`<set> LIVEMIND.als`), mai sull'originale.
 Avvio: `bridge.bat`. Protocollo: righe in `bridge/inbox.jsonl`
 `{"id":"<univoco>","tool":"<nome>","args":{...}}`, risposta in
 `bridge/reply.<id>.json`. Tool: `lom`, `run`, `load_device`, `ableton`,
-`transport`, `fire`, `mixer`, `create`, `write_notes`, `arrangement`, `analyze_audio`.
+`transport`, `fire`, `mixer`, `create`, `write_notes`, `arrangement`, `analyze_audio`,
+`sample` (carica un wav come clip audio, session o arrangement), `dsp_render`
+(catena di effetti Python offline su un file: distorsione, comp, EQ, reverb...).
 
 - Il reply arriva con latenza: file assente non e' un errore, rileggere.
 - `run` e' sincrono: un comando lento blocca tutto il bridge (timeout 120 s).

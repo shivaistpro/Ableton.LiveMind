@@ -112,8 +112,27 @@ def build_tools(client) -> dict[str, Callable[..., str]]:
             return f"ERRORE: {r.get('error')}"
         return str(r.get("value", "ok"))
 
+    def sample_load(path: str, track: int, clip: Optional[int] = None,
+                    position: Optional[float] = None, name: Optional[str] = None) -> str:
+        """Carica un file audio (path assoluto) come clip audio su una traccia
+        AUDIO: session se 'clip' e' dato, altrimenti arrangement a 'position' beats."""
+        from livemind.samples import load
+        return load(client, path, track, clip, position, name)
+
+    def dsp_render(src: str, dst: str, chain: list, oversample: int = 4,
+                   tail_s: float = 0.0, normalize_dbfs: Optional[float] = None) -> str:
+        """Catena di effetti Python (pedalboard) renderizzata offline su un file:
+        chain = [{"type":"distortion","drive_db":18}, {"type":"lowpass",
+        "cutoff_frequency_hz":9000}, ...]. Tipi: gain, distortion, clipping,
+        bitcrush, ladder, compressor, limiter, highpass, lowpass, peak,
+        lowshelf, highshelf, reverb, delay, chorus, phaser. Poi sample_load."""
+        from livemind.audio.dsp import render
+        return str(render(src, dst, chain, oversample, tail_s, normalize_dbfs))
+
     return {
         "connection_status": connection_status,
+        "sample_load": sample_load,
+        "dsp_render": dsp_render,
         "lom_get": lom_get,
         "lom_set": lom_set,
         "lom_call": lom_call,

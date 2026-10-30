@@ -23,7 +23,9 @@ e leggo `bridge\reply.<id>.json`.
 **Tool disponibili**: `lom` (get/set/call/len/link su tutta la Live Object
 Model — il canale piu' potente), `run` (shell Windows), `load_device`,
 `ableton` (status/launch/quit/open_project/save/list_projects), `transport`,
-`fire`, `mixer`, `create`, `write_notes`, `arrangement`, `analyze_audio`.
+`fire`, `mixer`, `create`, `write_notes`, `arrangement`, `analyze_audio`,
+`sample` (carica un wav come clip audio, session o arrangement), `dsp_render`
+(catena di effetti Python offline su un file: distorsione, comp, EQ, reverb...).
 
 **Regole che evitano ore perse**
 - Il reply arriva **con latenza**: file assente non significa errore, rileggere

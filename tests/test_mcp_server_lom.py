@@ -34,6 +34,7 @@ def test_build_tools_exposes_all_expected_names():
     tools = build_tools(FakeLomClient())
     assert set(tools.keys()) == {
         "connection_status", "lom_get", "lom_set", "lom_call", "lom_len", "lom_notes",
+        "sample_load", "dsp_render",
     }
 
 

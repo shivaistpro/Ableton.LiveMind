@@ -216,6 +216,8 @@ Ogni tool è disponibile identico sia via bridge JSONL (`{"tool": "...", "args":
 |---|---|---|
 | `app_info` | `what` (version\|test) | Versione Live installata, test di connettività base |
 | `analyze_audio` | `seconds` | LUFS integrato/short-term, true peak dBTP, bilancio spettrale (richiede loopback audio) |
+| `sample` | `path`, `track`, `clip` o `position`, `name` | Carica un file audio come clip audio (Live 12 `create_audio_clip`): session se `clip`, altrimenti arrangement a `position` beats |
+| `dsp_render` | `src`, `dst`, `chain`, `oversample`, `tail_s`, `normalize_dbfs` | Catena di effetti Python (pedalboard) renderizzata offline: distortion, clipping, bitcrush, ladder, compressor, limiter, filtri/EQ, reverb, delay, chorus, phaser. Non lineari in oversampling |
 | `connection_status` *(solo mcp_server)* | — | Verifica subito se AbletonOSC risponde — primo comando da chiamare ad ogni sessione |
 
 ### Layer generico OSC — copertura 100% dell'address space AbletonOSC

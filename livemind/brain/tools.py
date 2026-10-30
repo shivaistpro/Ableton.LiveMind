@@ -200,6 +200,30 @@ TOOLS: list[dict] = [
          "bpm": {"type": "number"}, "division": {"type": "string", "default": "1/4"}},
       "required": ["action"]}},
 
+    {"name": "sample", "description": "Carica un file audio (wav/aif/flac) in Live come clip audio, via LOM "
+        "(Live 12, create_audio_clip). Session: track+clip. Arrangement: track+position in beats. "
+        "La traccia dev'essere AUDIO; path assoluto sul PC di Live. Per sample processati in Python usa prima dsp_render.",
+     "input_schema": {"type": "object", "properties": {
+         "path": {"type": "string"}, "track": {"type": "integer"},
+         "clip": {"type": "integer", "description": "Slot di session (omesso = arrangement)"},
+         "position": {"type": "number", "description": "Arrangement, in beats (default 0)"},
+         "name": {"type": "string", "description": "Nome clip (solo session)"}},
+      "required": ["path", "track"]}},
+    {"name": "dsp_render", "description": "Applica offline a un file audio una catena di effetti scritta in "
+        "Python (pedalboard) e scrive un WAV 24 bit. chain = lista di {type, ...parametri}: gain(gain_db), "
+        "distortion(drive_db), clipping(threshold_db), bitcrush(bit_depth), ladder(mode LPF24/HPF24/BPF24, "
+        "cutoff_hz, resonance, drive), compressor(threshold_db, ratio, attack_ms, release_ms), "
+        "limiter(threshold_db, release_ms), highpass/lowpass(cutoff_frequency_hz), "
+        "peak/lowshelf/highshelf(cutoff_frequency_hz, gain_db, q), reverb(room_size, damping, wet_level, "
+        "dry_level, width), delay(delay_seconds, feedback, mix), chorus, phaser. Stadi non lineari in "
+        "oversampling. Ritorna peak/RMS; poi caricalo con il tool sample.",
+     "input_schema": {"type": "object", "properties": {
+         "src": {"type": "string"}, "dst": {"type": "string"},
+         "chain": {"type": "array", "items": {"type": "object"}},
+         "oversample": {"type": "integer", "default": 4},
+         "tail_s": {"type": "number", "description": "Silenzio in coda per code di reverb/delay"},
+         "normalize_dbfs": {"type": "number", "description": "Normalizza il picco campione a questo valore"}},
+      "required": ["src", "dst", "chain"]}},
     {"name": "run", "description": "Esegue un comando shell (cmd.exe) sulla macchina dell'utente — "
         "robocopy, git, python, o qualunque comando utile. Nessun popup di conferma.",
      "input_schema": {"type": "object", "properties": {
@@ -425,6 +449,13 @@ def dispatch(name: str, args: dict[str, Any], live, analyzer=None, loader=None, 
         if name == "knowledge":
             from livemind.brain.kb import dispatch as kb_dispatch
             return kb_dispatch(args)
+        if name == "sample":
+            from livemind.samples import load
+            return load(lom, args["path"], args["track"], args.get("clip"),
+                        args.get("position"), args.get("name"))
+        if name == "dsp_render":
+            from livemind.audio.dsp import dispatch as dsp_dispatch
+            return dsp_dispatch(args)
         if name == "run":
             from livemind.local_exec_mcp import build_tools
             return build_tools()["run"](args["command"], args.get("cwd"), args.get("timeout", 120))
