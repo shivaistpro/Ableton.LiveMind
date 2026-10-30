@@ -35,6 +35,14 @@ Model — il canale piu' potente), `run` (shell Windows), `load_device`,
 - Path LOM = **lista** di step: `["tracks:0","devices:1","parameters:2"]`.
 - Per assegnare un OGGETTO LOM usare `action:"link"` con `value_path`.
 - `lom_call` con `"args": []` vuoto fallisce: omettere la chiave.
+- **Velocita'**: ogni comando LOM costa un tick di Live (fino a ~1 s con Live in
+  secondo piano). Per molti comandi usare `LomClient.batch([...])`
+  (`{"cmd":"batch","cmds":[...]}`): N comandi in un solo tick.
+- Live 12.3+: `Track.insert_device("<nome device nativo>")` carica device Live
+  senza browser/UI (Drift, Wavetable, Operator, EQ Eight, Compressor...). Non
+  carica Max for Live (DS Kick...) ne' campioni in Simpler.
+- Sidechain: `Compressor.available_input_routing_types` + `link` su
+  `input_routing_type`, poi parametro `S/C On`.
 - Mai leggere `bridge\outbox.jsonl` intero (decine di migliaia di token):
   solo i singoli `reply.<id>.json`.
 - Modifiche a `livemind\**` richiedono riavvio del bridge, oppure invocare il

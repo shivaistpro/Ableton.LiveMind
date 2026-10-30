@@ -57,6 +57,11 @@ class LomClient:
     def call(self, path: Optional[list], method: str, args: Optional[list] = None, root: str = "song") -> dict:
         return self._send({"cmd": "call", "root": root, "path": path or [], "method": method, "args": args})
 
+    def batch(self, cmds: list) -> dict:
+        """Piu' comandi (dict get/set/call/len/link) eseguiti in un solo tick di
+        Live; value = lista di risposte nello stesso ordine."""
+        return self._send({"cmd": "batch", "cmds": cmds})
+
     def length(self, path: Optional[list], root: str = "song") -> dict:
         return self._send({"cmd": "len", "root": root, "path": path or []})
 

@@ -139,6 +139,11 @@ def dispatch(cmd: dict, get_song: Callable[[], Any], get_app: Callable[[], Any])
     action = cmd.get("cmd")
     if action == "ping":
         return {"ok": True, "pong": True}
+    if action == "batch":
+        # N comandi in UN solo tick del main thread: ogni comando singolo
+        # costa un tick di update_display (~100 ms-1 s), il batch no.
+        # Ogni sotto-comando ha la sua risposta: un errore non ferma gli altri.
+        return {"ok": True, "value": [dispatch(c, get_song, get_app) for c in cmd.get("cmds") or []]}
 
     root_name = cmd.get("root", "song")
     if root_name == "song":

@@ -167,6 +167,22 @@ def test_dispatch_ping():
     assert out == {"ok": True, "pong": True}
 
 
+def test_dispatch_batch_runs_all_and_keeps_errors_local():
+    track = FakeTrack("Kick")
+    song = FakeSong([track])
+    out = lom.dispatch(
+        {"cmd": "batch", "cmds": [
+            {"cmd": "set", "path": ["tracks:0"], "prop": "mute", "value": True},
+            {"cmd": "get", "path": ["tracks:9"], "prop": "name"},
+            {"cmd": "get", "path": ["tracks:0"], "prop": "name"},
+        ]},
+        get_song=lambda: song, get_app=lambda: None,
+    )
+    r = out["value"]
+    assert out["ok"] and r[0] == {"ok": True} and not r[1]["ok"]
+    assert r[2] == {"ok": True, "value": "Kick"} and track.mute is True
+
+
 def test_dispatch_get_song_root():
     song = FakeSong([FakeTrack("Kick")])
     out = lom.dispatch(
