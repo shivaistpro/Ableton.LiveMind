@@ -61,6 +61,16 @@ Gotcha (gia' risolti, non reintrodurre):
 - `lom_call` con `"args": []` vuoto fallisce: omettere la chiave.
 - Il canale LOM fa **una operazione per round trip**. Oltre ~200 round trip
   (set grandi) cambiare strada: leggere il `.als` offline con `tools/als_scan.py`.
+- Ogni comando LOM costa un tick di Live (fino a ~1 s con Live in secondo
+  piano). Per molti comandi usare `LomClient.batch([...])`
+  (`{"cmd":"batch","cmds":[...]}`): N comandi in un solo tick. Richiede il
+  Remote Script aggiornato (`python -m livemind.install`).
+- Live 12.3+: `Track.insert_device("<device nativo>")` carica device Live senza
+  browser/UI (Drift, Wavetable, Operator, EQ Eight, Compressor...); non carica
+  Max for Live ne' campioni in Simpler. Audio su clip: tool `sample`
+  (`create_audio_clip`); effetti offline: tool `dsp_render`.
+- Sidechain: `Compressor.available_input_routing_types` + `link` su
+  `input_routing_type`, poi parametro `S/C On`.
 
 Se modifichi `remote_script/LiveMind/*.py` va reinstallato
 (`python -m livemind.install`) e ricaricato in Live (Control Surface su
