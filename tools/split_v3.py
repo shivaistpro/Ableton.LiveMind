@@ -13,6 +13,8 @@ clip, id e gruppo; la catena di gruppi sopra ogni traccia e' identica a quella
 originale, togliendo il gruppo brano neutro.
 
 Uso: python split_v3.py <in.als> <out.als>   |   python split_v3.py verify <in> <out>
+POI OBBLIGATORIO: python fix_routing.py <out> <out> <gruppi brano> (i sottogruppi clonati
+escono nel Main: senza fix EQ e volume del gruppo brano non agiscono).
 """
 from __future__ import annotations
 
